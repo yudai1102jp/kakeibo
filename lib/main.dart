@@ -3,6 +3,7 @@ import './ui/input/input.dart';
 import './ui/history/history.dart';
 import './ui/history/test.dart';
 import './ui/history/test2.dart';
+import './widget/selectlist.dart';
 // import 'package:flutter/material.dart';
 // import 'package:flutter/rendering.dart';
 // import 'package:flutter/services.dart';
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => InputPage(),
         '/h': (context) => History(),
+        '/test': (context) => DropDownUserList(),
       },
     );
   }

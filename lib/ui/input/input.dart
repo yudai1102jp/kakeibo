@@ -3,6 +3,7 @@ import 'package:flutter/rendering.dart';
 import 'parts/inputnum.dart';
 import 'parts/switch.dart';
 import 'parts/decidebutton.dart';
+import '../../widget/selectlist.dart';
 
 // ignore: camel_case_types
 class InputPage extends StatelessWidget {
@@ -12,28 +13,15 @@ class InputPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Input Page'),
+        title: const Text('入力画面'),
         leading: IconButton(
             onPressed: () {
               // （1） 指定した画面に遷移する
               Navigator.pushNamed(context, '/h');
             },
             icon: Icon(Icons.article_outlined)),
-        actions: <Widget>[
-          TextButton(
-            onPressed: () {
-              // （1） 指定した画面に遷移する
-              Navigator.pushNamed(context, '/h');
-            },
-            style: TextButton.styleFrom(
-              primary: Colors.black,
-            ),
-            child: const Text('履歴'),
-          ),
-          // IconButton(
-          //   onPressed: () {},
-          //   icon: Icon(Icons.more_vert),
-          // ),
+        actions: [
+          DropDownUserList(),
         ],
       ),
       // body: const InputPage()),

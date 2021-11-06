@@ -24,6 +24,7 @@ class _Input_numState extends State<InputNum> {
       fontWeight: FontWeight.w500,
     );
     var textField = TextField(
+      autofocus: true,
       enabled: true,
       maxLength: 10,
       // ignore: deprecated_member_use

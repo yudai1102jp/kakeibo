@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import '../../widget/selectlist.dart';
 
 class History extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Input Page'),
+        title: const Text('履歴'),
         leading: IconButton(
           onPressed: () {
             // （1） 指定した画面に遷移する
@@ -13,21 +14,8 @@ class History extends StatelessWidget {
           },
           icon: Icon(Icons.edit),
         ),
-        actions: <Widget>[
-          TextButton(
-            onPressed: () {
-              // （1） 指定した画面に遷移する
-              // Navigator.pushNamed(context, '/h');
-            },
-            style: TextButton.styleFrom(
-              primary: Colors.black,
-            ),
-            child: const Text('履歴'),
-          ),
-          // IconButton(
-          //   onPressed: () {},
-          //   icon: Icon(Icons.more_vert),
-          // ),
+        actions: [
+          DropDownUserList(),
         ],
       ),
       // body: const InputPage()),
