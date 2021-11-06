@@ -13,6 +13,12 @@ class InputPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Input Page'),
+        leading: IconButton(
+            onPressed: () {
+              // （1） 指定した画面に遷移する
+              Navigator.pushNamed(context, '/h');
+            },
+            icon: Icon(Icons.article_outlined)),
         actions: <Widget>[
           TextButton(
             onPressed: () {

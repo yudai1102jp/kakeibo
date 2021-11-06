@@ -11,7 +11,7 @@ class History extends StatelessWidget {
             // （1） 指定した画面に遷移する
             Navigator.pop(context);
           },
-          icon: Icon(Icons.arrow_back),
+          icon: Icon(Icons.edit),
         ),
         actions: <Widget>[
           TextButton(
