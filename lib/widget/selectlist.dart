@@ -6,10 +6,7 @@ class DropDownUserList extends StatefulWidget {
 }
 
 class _DropDownUserListState extends State<DropDownUserList> {
-  List<String> _dropDownMenu = [
-    'Aki',
-    'Inoguchi',
-  ];
+  List<String> _dropDownMenu = ['Aki', 'Inoguchi', '編集'];
 
   String _selectedKey = 'Aki';
 
@@ -31,6 +28,9 @@ class _DropDownUserListState extends State<DropDownUserList> {
         setState(() {
           _selectedKey = newValue!;
         });
+        if ('編集' == newValue) {
+          Navigator.pushNamed(context, '/manage');
+        }
       },
       items: _dropDownMenu.map<DropdownMenuItem<String>>((String value) {
         return DropdownMenuItem<String>(

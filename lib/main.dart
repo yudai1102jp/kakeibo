@@ -3,23 +3,20 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:kakeibo/ui/login/login.dart';
 
 import './ui/input/input.dart';
 import './ui/history/history.dart';
+import './ui/management/manage.dart';
 
-import './ui/history/test.dart';
-import './ui/history/test2.dart';
-import './ui/login/login.dart';
-import './widget/selectlist.dart';
+// import './ui/history/test.dart';
+// import './ui/history/test2.dart';
+// import './ui/login/login.dart';
 
-// import 'package:flutter/material.dart';
-// import 'package:flutter/rendering.dart';
-// import 'package:flutter/services.dart';
-
-void main() {
-  // debugPaintSizeEnabled = true;
-  runApp(const MyApp());
+Future<void> main() async {
+  // Firebase初期化
+  WidgetsFlutterBinding.ensureInitialized(); // Add this
+  await Firebase.initializeApp();
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -29,13 +26,39 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext constext) {
     return MaterialApp(
       // title: 'Startup Name Generator',
-      initialRoute: '/login',
+      initialRoute: '/',
       routes: {
         '/': (context) => InputPage(),
         '/h': (context) => History(),
-        '/test': (context) => DropDownUserList(),
-        '/login': (context) => Login(),
+
+        // '/test': (context) => DropDownUserList(),
+        '/manage': (context) => ManagePage(),
       },
     );
   }
 }
+
+
+// import 'package:firebase_core/firebase_core.dart';
+// import 'package:flutter/material.dart';
+
+// Future<void> main() async {
+//   // Firebase初期化
+//   WidgetsFlutterBinding.ensureInitialized(); // Add this
+//   await Firebase.initializeApp();
+//   runApp(MyApp());
+// }
+
+// class MyApp extends StatelessWidget {
+//   // This widget is the root of your application.
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//         title: 'Flutter Demo',
+//         theme: ThemeData(
+//           primarySwatch: Colors.blue,
+//         ),
+//         // home: MyAuthPage(),
+//         home: MyAuthPage());
+//   }
+// }
